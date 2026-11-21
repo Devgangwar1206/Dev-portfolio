@@ -19,36 +19,40 @@ export function initialFX() {
       linesClass: "split-line",
     }
   );
-  gsap.fromTo(
-    landingText.chars,
-    { opacity: 0, y: 80, filter: "blur(5px)" },
-    {
-      opacity: 1,
-      duration: 1.2,
-      filter: "blur(0px)",
-      ease: "power3.inOut",
-      y: 0,
-      stagger: 0.025,
-      delay: 0.3,
-    }
-  );
+  if (landingText && landingText.chars && landingText.chars.length > 0) {
+    gsap.fromTo(
+      landingText.chars,
+      { opacity: 0, y: 80, filter: "blur(5px)" },
+      {
+        opacity: 1,
+        duration: 1.2,
+        filter: "blur(0px)",
+        ease: "power3.inOut",
+        y: 0,
+        stagger: 0.025,
+        delay: 0.3,
+      }
+    );
+  }
 
   let TextProps = { type: "chars,lines", linesClass: "split-h2" };
 
   var landingText2 = new SplitText(".landing-h2-info", TextProps);
-  gsap.fromTo(
-    landingText2.chars,
-    { opacity: 0, y: 80, filter: "blur(5px)" },
-    {
-      opacity: 1,
-      duration: 1.2,
-      filter: "blur(0px)",
-      ease: "power3.inOut",
-      y: 0,
-      stagger: 0.025,
-      delay: 0.3,
-    }
-  );
+  if (landingText2 && landingText2.chars && landingText2.chars.length > 0) {
+    gsap.fromTo(
+      landingText2.chars,
+      { opacity: 0, y: 80, filter: "blur(5px)" },
+      {
+        opacity: 1,
+        duration: 1.2,
+        filter: "blur(0px)",
+        ease: "power3.inOut",
+        y: 0,
+        stagger: 0.025,
+        delay: 0.3,
+      }
+    );
+  }
 
   gsap.fromTo(
     ".landing-info-h2",
@@ -81,6 +85,7 @@ export function initialFX() {
 }
 
 function LoopText(Text1: SplitText, Text2: SplitText) {
+  if (!Text1?.chars?.length || !Text2?.chars?.length) return;
   var tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
   const delay = 4;
   const delay2 = delay * 2 + 1;
