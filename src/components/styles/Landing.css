@@ -178,52 +178,32 @@
   font-weight: 300;
   color: var(--accentColor);
   margin: 0;
+  margin-bottom: 6px;
 }
-.landing-info h2 {
+.landing-info-h2 {
   margin: 0;
-  margin-top: -20px;
-  margin-left: 20px;
   font-family: "Geist", sans-serif;
   font-weight: 600;
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 42px;
+  line-height: 52px;
+  height: 52px;
   position: relative;
-  display: flex;
-  flex-wrap: nowrap;
+  overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: #ffffff;
 }
-.landing-h2-info-1 {
-  position: absolute;
-  top: 0;
-}
-h2.landing-info-h2 {
-  color: #c481ff;
-  font-size: 42px;
-  width: 120%;
-  margin: 0;
-  font-family: "Geist", sans-serif;
-  font-weight: 600;
+.landing-h2-1 {
   position: relative;
-  margin-left: -5px;
+  width: 100%;
 }
 .landing-h2-2 {
   position: absolute;
   top: 0;
-}
-.landing-info-h2::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 120%;
-  z-index: 3;
-  background-image: linear-gradient(
-    0deg,
-    var(--backgroundColor) 40%,
-    rgba(0, 0, 0, 0) 110%
-  );
-  top: 0;
   left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
 }
 @media screen and (max-width: 1024px) {
   .character-model {
@@ -262,17 +242,20 @@ h2.landing-info-h2 {
     font-size: 16px;
     letter-spacing: 2px;
   }
-  .landing-info h2 {
-    font-size: 28px;
-    line-height: 36px;
-    margin-left: 0;
-    justify-content: center;
-  }
-  h2.landing-info-h2 {
-    font-size: 32px;
+  .landing-info-h2 {
+    font-size: 30px;
+    line-height: 38px;
+    height: 38px;
     width: 100%;
-    margin-left: 0;
+    margin: 0 auto;
     text-align: center;
+  }
+  .landing-h2-1,
+  .landing-h2-2 {
+    width: 100%;
+    text-align: center;
+    left: 0;
+    right: 0;
   }
 }
 @media screen and (max-width: 500px) {
@@ -296,12 +279,10 @@ h2.landing-info-h2 {
   .landing-info h3 {
     font-size: 14px;
   }
-  .landing-info h2 {
-    font-size: 24px;
-    line-height: 30px;
-  }
-  h2.landing-info-h2 {
-    font-size: 28px;
+  .landing-info-h2 {
+    font-size: 26px;
+    line-height: 32px;
+    height: 32px;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -361,11 +342,9 @@ h2.landing-info-h2 {
   .landing-info h3 {
     font-size: 35px;
   }
-  .landing-info h2 {
-    font-size: 65px;
-    line-height: 62px;
-  }
-  h2.landing-info-h2 {
-    font-size: 75px;
+  .landing-info-h2 {
+    font-size: 70px;
+    line-height: 80px;
+    height: 80px;
   }
 }
