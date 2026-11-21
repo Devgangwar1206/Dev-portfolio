@@ -1,0 +1,168 @@
+.icons-section {
+  position: fixed;
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  bottom: 0;
+  z-index: 99;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.social-icons {
+  position: absolute;
+  left: -20px;
+  bottom: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  padding: 10px;
+}
+.social-icons span {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: flex;
+}
+.social-icons a {
+  --siLeft: 50%;
+  --siTop: 50%;
+  position: absolute;
+  left: var(--siLeft, 50%);
+  top: var(--siTop, 50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  font-size: 23px;
+  color: #b5a8c2;
+  will-change: left, top;
+  transition: transform 0.3s ease-out, color 0.3s ease, filter 0.3s ease;
+}
+.social-icons a:hover {
+  color: var(--accentColor);
+  transform: translate(-50%, -50%) scale(1.22);
+  filter: drop-shadow(0 0 12px var(--accentColor));
+}
+.resume-button {
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  gap: 5px;
+  bottom: 40px;
+  right: 0;
+  width: auto;
+  text-wrap: nowrap;
+  letter-spacing: 4px;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 600;
+  color: #5e5e5e;
+  cursor: pointer;
+  transition: 0.5s;
+  transform-origin: left bottom;
+  transform: translateX(100%) rotateZ(-90deg);
+}
+.resume-button:hover {
+  color: #fff;
+}
+div.resume-button span {
+  color: #fff;
+  font-size: 17px;
+  margin-top: -1px;
+  display: flex;
+  align-items: center;
+}
+.check-line {
+  position: fixed;
+  top: 655px;
+  left: 0;
+  height: 1px;
+  background-color: #ffffff;
+  width: 100%;
+  z-index: 99999;
+}
+@media only screen and (min-width: 900px) {
+  .social-icons {
+    display: flex;
+    gap: 20px;
+  }
+  .social-icons a {
+    font-size: 28px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .resume-button {
+    transform: none;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  div.resume-button span {
+    font-size: 23px;
+    margin-top: -1.5px;
+  }
+}
+
+@media only screen and (max-width: 899px) {
+  .icons-section {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .social-icons {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 7px 14px;
+    background: rgba(18, 14, 24, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+  }
+
+  .social-icons span {
+    width: 30px;
+    height: 30px;
+  }
+
+  .social-icons a {
+    font-size: 17px;
+    color: #e2d9eb;
+  }
+
+  .resume-button {
+    position: static;
+    transform: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    background: rgba(194, 164, 255, 0.18);
+    border: 1px solid var(--accentColor);
+    color: #ffffff;
+    border-radius: 25px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 20px rgba(194, 164, 255, 0.25);
+    pointer-events: auto;
+  }
+
+  div.resume-button span {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+}
